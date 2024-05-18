@@ -13,8 +13,14 @@ docker build -t flask . && docker run -it --rm --publish 3000:3000 --name flask 
 # build docker image
 docker build -t flask .
 
-# run docker image
+# pull docker image from public registry
+docker pull jlemesh/flask-docker
+
+# run docker image that was built
 docker run -it --publish 3000:3000 --name flask flask
+
+# run pulled docker image
+docker run -it --publish 3000:3000 --name flask jlemesh/flask-docker:latest
 
 # run docker image on custom port (accessible on http://localhost:3005, image port 3001)
 docker run -it --publish 3005:3001 --env FLASK_PORT=3001 flask
@@ -33,7 +39,7 @@ curl \
 ## How this was created
 
 1. Read [Flask documentation](https://flask.palletsprojects.com/en/3.0.x/quickstart/)
-1. Install prerequisites if needed: Docker, python, venv
+1. Install prerequisites if not already installed: Docker, python, venv
 1. [Install](https://flask.palletsprojects.com/en/3.0.x/installation/) Flask: `pip install Flask`
 1. Write a simple `app.py` file and make sure it runs using Flask command: `flask run`
 1. Run `pip freeze` to create basic `requirements.txt` file
@@ -48,3 +54,4 @@ curl \
 1. Add and install `tensorflow`, `numpy`
 1. Write basic code to predict uploaded image class and return response to the client
 1. Optimize the app so InceptionV3 is loaded on statup instead of each request
+1. Push image to Docker hub as described in [Docker docs](https://docs.docker.com/get-started/04_sharing_app/)
