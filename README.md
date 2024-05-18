@@ -44,12 +44,16 @@ curl \
 1. Write a simple `app.py` file and make sure it runs using Flask command: `flask run`
 1. Run `pip freeze` to create basic `requirements.txt` file
 1. Create Dockerfile:
-  - pick base python image
-  - copy files/install packages/set `CMD` to run on container startup
-  - add possibility to customize ports, both of container and host
+
+   - pick base python image
+   - copy files/install packages/set `CMD` to run on container startup
+   - add possibility to customize ports, both of container and host
+
 1. Make sure image builds and runs on Docker:
-  - fix typos
-  - add `--host=0.0.0.0` to flask command as container IP is not 127.0.0.1 and connection is refused when accessing the app from localhost
+
+   - fix typos
+   - add `--host=0.0.0.0` to flask command as container IP is not 127.0.0.1 and connection is refused when accessing the app from localhost
+
 1. Add `/predict` endpoint which accepts file upload
 1. Add and install `tensorflow`, `numpy`
 1. Write basic code to predict uploaded image class and return response to the client
