@@ -58,4 +58,4 @@ curl \
 1. Add and install `tensorflow`, `numpy`
 1. Write basic code to predict uploaded image class and return response to the client
 1. Optimize the app so InceptionV3 is loaded on statup instead of each request
-1. Push image to Docker hub as described in [Docker docs](https://docs.docker.com/get-started/04_sharing_app/)
+1. Push image to Docker hub as described in [Docker docs](https://docs.docker.com/get-started/04_sharing_app/): [image link](https://hub.docker.com/r/jlemesh/flask-docker)
